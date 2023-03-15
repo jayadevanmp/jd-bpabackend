@@ -1,0 +1,48 @@
+{
+  "name": "bpa-backend",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "cross-env NODE_ENV=development NODE_TLS_REJECT_UNAUTHORIZED='0' nodemon src/index.ts",
+    "start:qa": "cross-env NODE_ENV=qa nodemon src/index.ts",
+    "start:production": "cross-env NODE_ENV=production NODE_TLS_REJECT_UNAUTHORIZED='0' node dist/index.js",
+    "serve:optimized": "NODE_TLS_REJECT_UNAUTHORIZED='0' node dist/index.js",
+    "build": "cross-env NODE_ENV=production NODE_TLS_REJECT_UNAUTHORIZED='0' rimraf ./dist && tsc",
+    "lint": "eslint \"src/**/*.ts\" --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "private": true,
+  "license": "unlicensed",
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.14.4",
+    "@types/swagger-jsdoc": "^6.0.1",
+    "@types/swagger-ui-express": "^4.1.3",
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
+    "eslint": "^8.35.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "nodemon": "^2.0.21",
+    "rimraf": "^4.1.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "axios": "^1.3.4",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "helmet": "^6.0.1",
+    "reflect-metadata": "^0.1.13",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.2",
+    "winston": "^3.8.2"
+  }
+}
